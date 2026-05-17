@@ -229,6 +229,42 @@
       margin-bottom: 0.2rem;
     }
 
+    /* ── SERVIÇOS FORMATIVOS ── */
+    #servicos-formativos { background: var(--creme); }
+    #servicos-formativos .subtitulo {
+      color: var(--texto-sec);
+      margin-bottom: 2rem;
+      max-width: 760px;
+    }
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .servico-card {
+      background: var(--teal-claro);
+      border: 1px solid var(--teal-medio);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 1.3rem 1.2rem;
+    }
+    .servico-card h3 {
+      font-size: 1.15rem;
+      color: var(--teal);
+      margin-bottom: 0.7rem;
+      line-height: 1.35;
+    }
+    .servico-card p {
+      font-size: 0.95rem;
+      color: var(--texto);
+      margin-bottom: 0.85rem;
+      line-height: 1.7;
+    }
+    .servico-card p.complemento {
+      color: var(--texto-sec);
+      margin-bottom: 1.2rem;
+    }
+
     /* ── CTA WHATSAPP ── */
     #cta-wpp {
       background: var(--teal);
@@ -372,6 +408,7 @@
       #hero h2 { font-size: 1.4rem; }
       #hero p { font-size: 0.97rem; }
       .dual-grid { grid-template-columns: 1fr; }
+      .servicos-grid { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
       .form-full { grid-column: 1; }
     }
@@ -487,6 +524,29 @@
         <div class="faq-resposta">Os valores e formas de pagamento são informados após a triagem inicial, de acordo com a situação e a modalidade escolhida.</div>
       </details>
 
+    </div>
+  </section>
+
+  <!-- SERVIÇOS FORMATIVOS -->
+  <section id="servicos-formativos">
+    <div class="inner">
+      <h2 class="section-title">Serviços formativos para famílias no Brasil e fora do país</h2>
+      <p class="subtitulo">Além da orientação familiar, a CL Educação &amp; Desenvolvimento oferece acompanhamentos remotos para famílias que desejam conduzir processos educativos com mais método, presença e clareza.</p>
+      <div class="servicos-grid">
+        <article class="servico-card">
+          <h3>Presença Educativa</h3>
+          <p>Acompanhamento formativo individual para crianças e adolescentes, com foco em linguagem, pensamento, repertório cultural, autonomia e responsabilidade.</p>
+          <p class="complemento">Indicado para famílias que querem participar ativamente da formação intelectual e humana dos filhos, inclusive fora do Brasil.</p>
+          <a class="btn-primary" href="https://wa.me/5511970672708?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20da%20CL%20Educa%C3%A7%C3%A3o%20%26%20Desenvolvimento%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20Presen%C3%A7a%20Educativa." target="_blank" rel="noopener noreferrer">Quero saber mais</a>
+        </article>
+
+        <article class="servico-card">
+          <h3>Presença na Alfabetização</h3>
+          <p>Formação do cuidador para acompanhar a alfabetização da criança com método, respeitando oralidade, pensamento e psicomotricidade antes da escrita.</p>
+          <p class="complemento">Indicado para famílias que desejam conduzir o processo de alfabetização com segurança, especialmente em contextos familiares fora do país.</p>
+          <a class="btn-primary" href="https://wa.me/5511970672708?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20da%20CL%20Educa%C3%A7%C3%A3o%20%26%20Desenvolvimento%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20Presen%C3%A7a%20na%20Alfabetiza%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Quero saber mais</a>
+        </article>
+      </div>
     </div>
   </section>
 
