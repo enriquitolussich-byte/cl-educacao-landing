@@ -42,13 +42,24 @@
       align-items: center;
       justify-content: space-between;
     }
-    .header-brand h1 {
+     .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .header-brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .header-brand-text h1 {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--teal);
       line-height: 1.2;
     }
-    .header-brand span {
+    .header-brand-text span {
       font-size: 0.8rem;
       color: var(--texto-sec);
       font-weight: 400;
@@ -369,6 +380,13 @@
       text-align: center;
       color: #fff;
     }
+    footer .footer-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      margin: 0 auto 0.6rem;
+      display: block;
+    }
     footer .nome-rodape {
       font-size: 1.05rem;
       font-weight: 700;
@@ -404,6 +422,8 @@
     /* ── RESPONSIVO ── */
     @media (max-width: 768px) {
       header { padding: 0.8rem 1rem; }
+      .header-brand { gap: 0.6rem; }
+      .header-brand-logo { width: 40px; height: 40px; }
       .btn-wpp-header { font-size: 0.8rem; padding: 0.45rem 0.9rem; }
       #hero h2 { font-size: 1.4rem; }
       #hero p { font-size: 0.97rem; }
@@ -419,8 +439,11 @@
 <!-- HEADER -->
 <header>
   <div class="header-brand">
-    <h1>CL Educação &amp; Desenvolvimento</h1>
-    <span>por Cleonice Lussich</span>
+    <img class="header-brand-logo" src="/logo-cl.png" alt="Logo CL Educação &amp; Desenvolvimento" />
+    <div class="header-brand-text">
+      <h1>CL Educação &amp; Desenvolvimento</h1>
+      <span>por Cleonice Lussich</span>
+    </div>
   </div>
   <a class="btn-wpp-header"
      href="https://wa.me/5511970672708"
@@ -639,6 +662,7 @@
 
 <!-- RODAPÉ -->
 <footer>
+  <img class="footer-logo" src="/logo-cl.png" alt="Logo CL Educação &amp; Desenvolvimento" />
   <p class="nome-rodape">CL Educação &amp; Desenvolvimento</p>
   <p class="sub-rodape">por Cleonice Lussich</p>
   <nav class="links-rodape" aria-label="Redes sociais">
