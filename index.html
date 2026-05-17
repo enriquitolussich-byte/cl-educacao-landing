@@ -386,6 +386,61 @@
       line-height: 1.6;
     }
 
+
+
+    /* ── LIVRO NO MEIO DE TUDO ── */
+    #livro-no-meio {
+      background: var(--oliva-claro);
+    }
+    .livro-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .livro-capa-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 26px rgba(13, 122, 107, 0.12);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .livro-capa-card img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+    }
+    .livro-conteudo h2 {
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .livro-conteudo p {
+      color: var(--texto);
+      margin-bottom: 1rem;
+    }
+    .livro-destaque {
+      color: var(--oliva);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .btn-livro {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn-livro:hover { background: #0a6357; }
+
     /* ── CTA WHATSAPP ── */
     #cta-wpp {
       background: var(--teal);
@@ -618,6 +673,7 @@
       .dual-grid { grid-template-columns: 1fr; }
       .servicos-grid { grid-template-columns: 1fr; }
       .paraguai-grid { grid-template-columns: 1fr; }
+      .livro-grid { grid-template-columns: 1fr; gap: 1.4rem; }
       .form-grid { grid-template-columns: 1fr; }
       .form-full { grid-column: 1; }
       .footer-grid { grid-template-columns: 1fr; gap: 1.4rem; }
@@ -819,6 +875,25 @@
         </article>
       </div>
       <a class="btn-primary" href="https://wa.me/5511970672708?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20da%20CL%20Educa%C3%A7%C3%A3o%20%26%20Desenvolvimento%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20assessoria%20educacional%20para%20fam%C3%ADlias%20brasileiras%20em%20mudan%C3%A7a%20para%20o%20Paraguai." target="_blank" rel="noopener noreferrer">Quero orientação para o Paraguai</a>
+    </div>
+  </section>
+
+
+
+  <!-- LIVRO NO MEIO DE TUDO -->
+  <section id="livro-no-meio">
+    <div class="livro-grid">
+      <div class="livro-capa-card">
+        <img src="/capa-no-meio-de-tudo.png" alt="Capa do livro No Meio de Tudo" />
+      </div>
+      <div class="livro-conteudo">
+        <h2 class="section-title">No Meio de Tudo</h2>
+        <p>Um livro para mães que carregam perguntas que nem sempre conseguem dizer em voz alta.</p>
+        <p>Nascido das dores que aparecem nas conversas com famílias e nos temas do canal CL Educação &amp; Desenvolvimento, No Meio de Tudo acompanha três mães — Ana, Mariana e Sofia — em histórias atravessadas por escola, culpa, silêncio e decisões difíceis.</p>
+        <p>Não é um manual de respostas prontas. É uma companhia para quem está tentando compreender o que fazer no meio da rotina, da dúvida e da pressão.</p>
+        <p class="livro-destaque">Primeiro volume de uma série de quatro livros.</p>
+        <a class="btn-livro" href="https://pixgo.org/loja/c-l-educacao-desenvolvimento" target="_blank" rel="noopener noreferrer">Comprar o livro</a>
+      </div>
     </div>
   </section>
 
