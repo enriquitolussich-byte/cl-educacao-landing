@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CL Educação & Desenvolvimento — Orientação Familiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #0D7A6B;
+      --oliva:       #5C6B1E;
+      --creme:       #FAFAF7;
+      --cinza-suave: #F5F5F3;
+      --teal-claro:  #EEF8F6;
+      --teal-medio:  #B2D8D2;
+      --oliva-claro: #F2F5E8;
+      --texto:       #333333;
+      --texto-sec:   #666666;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--texto);
+      background: var(--creme);
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--creme);
+      border-bottom: 1px solid var(--teal-medio);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-brand h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1.2;
+    }
+    .header-brand span {
+      font-size: 0.8rem;
+      color: var(--texto-sec);
+      font-weight: 400;
+    }
+    .btn-wpp-header {
+      background: var(--teal);
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .btn-wpp-header:hover { background: #0a6357; }
+
+    /* ── SEÇÕES GENÉRICAS ── */
+    section { padding: 4rem 1.5rem; }
+    .inner { max-width: 720px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--creme);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+    #hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--texto);
+      max-width: 680px;
+      margin: 0 auto 1.2rem;
+      line-height: 1.35;
+    }
+    #hero p {
+      font-size: 1.1rem;
+      color: var(--texto-sec);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .btn-primary:hover { background: #0a6357; }
+    .link-saiba {
+      display: block;
+      color: var(--teal);
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .link-saiba:hover { text-decoration: underline; }
+
+    /* ── O QUE É ── */
+    #servico { background: var(--cinza-suave); }
+    #servico p { color: var(--texto); }
+
+    /* ── O QUE INCLUI ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .card-item {
+      background: var(--teal-claro);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .card-item .icon {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      flex-shrink: 0;
+    }
+    .card-item p { font-size: 0.95rem; margin: 0; }
+    .nota-box {
+      background: var(--cinza-suave);
+      border-left: 3px solid var(--teal-medio);
+      padding: 0.75rem 1rem;
+      font-size: 0.88rem;
+      color: var(--texto-sec);
+      font-style: italic;
+    }
+
+    /* ── PARA QUEM ── */
+    #para-quem { background: var(--cinza-suave); }
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .bloco-sim {
+      background: var(--oliva-claro);
+      border-left: 4px solid var(--oliva);
+      border-radius: 0 6px 6px 0;
+      padding: 1.2rem 1.4rem;
+    }
+    .bloco-nao {
+      background: var(--cinza-suave);
+      border-left: 4px solid var(--teal-medio);
+      border-radius: 0 6px 6px 0;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid var(--teal-medio);
+      border-left-width: 4px;
+    }
+    .bloco-sim h3, .bloco-nao h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .bloco-sim h3 { color: var(--oliva); }
+    .bloco-nao h3 { color: var(--texto-sec); }
+    .bloco-sim ul, .bloco-nao ul {
+      list-style: none;
+      padding: 0;
+    }
+    .bloco-sim li, .bloco-nao li {
+      font-size: 0.92rem;
+      padding: 0.3rem 0;
+      color: var(--texto);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .bloco-sim li:last-child, .bloco-nao li:last-child { border-bottom: none; }
+    .bloco-sim li::before { content: "✓ "; color: var(--oliva); font-weight: 700; }
+    .bloco-nao li::before { content: "✕ "; color: var(--texto-sec); }
+
+    /* ── FAQ ── */
+    details {
+      border-bottom: 1px solid var(--teal-medio);
+      padding: 0.1rem 0;
+    }
+    details:first-of-type { border-top: 1px solid var(--teal-medio); }
+    summary {
+      font-weight: 700;
+      font-size: 0.97rem;
+      cursor: pointer;
+      padding: 1rem 0.5rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--texto);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--teal);
+      font-weight: 400;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "−"; }
+    details[open] summary { color: var(--teal); }
+    .faq-resposta {
+      padding: 0.9rem 1rem;
+      font-size: 0.93rem;
+      color: var(--texto-sec);
+      background: var(--teal-claro);
+      border-radius: 0 0 6px 6px;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── CTA WHATSAPP ── */
+    #cta-wpp {
+      background: var(--teal);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    #cta-wpp h2 {
+      color: #fff;
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+    #cta-wpp p {
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    .btn-wpp-grande {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: var(--teal);
+      padding: 1rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .btn-wpp-grande:hover { background: #e8f5f3; }
+    .btn-wpp-grande svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ── FORMULÁRIO ── */
+    #formulario { background: var(--creme); }
+    #formulario p.subtitulo {
+      color: var(--texto-sec);
+      margin-bottom: 2rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-full { grid-column: 1 / -1; }
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--texto);
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--teal-medio);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--texto);
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13,122,107,0.12);
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    .btn-enviar {
+      width: 100%;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      padding: 0.9rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-family: 'Lato', sans-serif;
+    }
+    .btn-enviar:hover { background: #0a6357; }
+    .nota-form {
+      font-size: 0.8rem;
+      color: var(--texto-sec);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+    #msg-sucesso {
+      display: none;
+      background: var(--teal-claro);
+      border-left: 4px solid var(--teal);
+      padding: 1rem 1.2rem;
+      color: var(--teal);
+      font-weight: 700;
+      border-radius: 0 6px 6px 0;
+      margin-top: 1.5rem;
+    }
+
+    /* ── RODAPÉ ── */
+    footer {
+      background: var(--teal);
+      padding: 2.5rem 1.5rem 0;
+      text-align: center;
+      color: #fff;
+    }
+    footer .nome-rodape {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    footer .sub-rodape {
+      font-size: 0.88rem;
+      opacity: 0.8;
+      margin: 0.25rem 0 1rem;
+    }
+    footer .links-rodape {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    footer .links-rodape a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    footer .links-rodape a:hover { color: #fff; text-decoration: underline; }
+    footer .copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .barra-oliva {
+      background: var(--oliva);
+      height: 8px;
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 768px) {
+      header { padding: 0.8rem 1rem; }
+      .btn-wpp-header { font-size: 0.8rem; padding: 0.45rem 0.9rem; }
+      #hero h2 { font-size: 1.4rem; }
+      #hero p { font-size: 0.97rem; }
+      .dual-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-brand">
+    <h1>CL Educação &amp; Desenvolvimento</h1>
+    <span>por Cleonice Lussich</span>
+  </div>
+  <a class="btn-wpp-header"
+     href="https://wa.me/5511970672708"
+     target="_blank" rel="noopener noreferrer">
+    Falar no WhatsApp
+  </a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <h2>Você toma decisões sobre a vida escolar do seu filho sem ter as informações certas.</h2>
+    <p>Orientação especializada para pais que precisam entender o que está acontecendo — e o que fazer a respeito.</p>
+    <a class="btn-primary" href="https://wa.me/5511970672708" target="_blank" rel="noopener noreferrer">
+      Quero entender minha situação
+    </a>
+    <a class="link-saiba" href="#servico">Saiba mais sobre o serviço ↓</a>
+  </section>
+
+  <!-- O QUE É -->
+  <section id="servico">
+    <div class="inner">
+      <h2 class="section-title">O que é a orientação familiar</h2>
+      <p>A orientação familiar é um espaço estruturado de análise e direcionamento — não é terapia, não é consultoria jurídica e não substitui o acompanhamento clínico do seu filho. É um processo de trabalho em que você entende a situação com clareza, organiza as decisões que precisam ser tomadas e recebe direção técnica baseada em legislação educacional, desenvolvimento infantil e neurociência aplicada.</p>
+    </div>
+  </section>
+
+  <!-- O QUE INCLUI -->
+  <section id="inclui">
+    <div class="inner">
+      <h2 class="section-title">O que você recebe</h2>
+      <div class="cards-grid">
+        <div class="card-item"><span class="icon">📋</span><p>Análise da situação escolar atual do seu filho</p></div>
+        <div class="card-item"><span class="icon">📄</span><p>Leitura dos documentos e laudos, quando existentes</p></div>
+        <div class="card-item"><span class="icon">⚖️</span><p>Direcionamento sobre direitos, obrigações da escola e próximos passos</p></div>
+        <div class="card-item"><span class="icon">🗣️</span><p>Orientação sobre como conduzir reuniões e negociações com a escola</p></div>
+        <div class="card-item"><span class="icon">📝</span><p>Registro escrito do que foi discutido e das direções indicadas</p></div>
+      </div>
+      <div class="nota-box">
+        A orientação não inclui diagnóstico, laudo clínico, representação legal ou plano terapêutico.
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section id="para-quem">
+    <div class="inner">
+      <h2 class="section-title">Para quem é este serviço</h2>
+      <div class="dual-grid">
+        <div class="bloco-sim">
+          <h3>Para quem é</h3>
+          <ul>
+            <li>Pais com filhos em processo de avaliação ou reavaliação escolar</li>
+            <li>Famílias que enfrentam conflito com a escola sobre inclusão ou adaptação</li>
+            <li>Pais que receberam um laudo e não sabem o que fazer com ele</li>
+            <li>Famílias em transição escolar — mudança de escola, cidade ou país</li>
+            <li>Pais que precisam tomar decisões escolares importantes sem referência técnica</li>
+          </ul>
+        </div>
+        <div class="bloco-nao">
+          <h3>Para quem não é</h3>
+          <ul>
+            <li>Quem busca diagnóstico ou laudo clínico</li>
+            <li>Quem precisa de representação jurídica</li>
+            <li>Quem busca sessões de terapia ou acompanhamento psicológico</li>
+            <li>Quem precisa de tutoria ou reforço escolar para o filho</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="inner">
+      <h2 class="section-title">Perguntas frequentes</h2>
+
+      <details>
+        <summary>Quantos encontros são necessários?</summary>
+        <div class="faq-resposta">Depende da complexidade da situação. A maioria das famílias resolve em dois a três encontros. Casos mais complexos podem exigir mais. Isso é definido na triagem inicial, sem compromisso.</div>
+      </details>
+
+      <details>
+        <summary>Os encontros são presenciais ou online?</summary>
+        <div class="faq-resposta">Os encontros são realizados online, por videochamada, em horário combinado.</div>
+      </details>
+
+      <details>
+        <summary>Cleonice pode falar com a escola por mim?</summary>
+        <div class="faq-resposta">A orientação prepara você para conduzir essa conversa com clareza e segurança. Cleonice não representa a família perante a escola.</div>
+      </details>
+
+      <details>
+        <summary>Preciso ter um laudo para solicitar a orientação?</summary>
+        <div class="faq-resposta">Não. Muitas famílias chegam exatamente porque ainda não têm laudo e precisam entender o processo.</div>
+      </details>
+
+      <details>
+        <summary>Como funciona o pagamento?</summary>
+        <div class="faq-resposta">Os valores e formas de pagamento são informados após a triagem inicial, de acordo com a situação e a modalidade escolhida.</div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CTA WHATSAPP -->
+  <section id="cta-wpp">
+    <h2>Pronto para entender sua situação?</h2>
+    <p>O primeiro passo é uma triagem inicial sem custo e sem compromisso.</p>
+    <a class="btn-wpp-grande"
+       href="https://wa.me/5511970672708"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Falar com Cleonice no WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.117 1.529 5.845L.057 23.571a.75.75 0 0 0 .921.921l5.726-1.472A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.976-1.365l-.356-.213-3.695.949.967-3.594-.233-.371A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Falar com Cleonice no WhatsApp
+    </a>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section id="formulario">
+    <div class="inner">
+      <h2 class="section-title">Prefere começar pelo formulário?</h2>
+      <p class="subtitulo">Preencha abaixo. Cleonice retorna em até 48 horas úteis.</p>
+
+      <form id="form-triagem" novalidate>
+        <div class="form-grid">
+
+          <div>
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome" />
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+          </div>
+
+          <div>
+            <label for="telefone">Telefone com WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999" />
+          </div>
+
+          <div>
+            <label for="cidade">Cidade e estado</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo — SP" />
+          </div>
+
+          <div>
+            <label for="idade">Idade do filho</label>
+            <select id="idade" name="idade">
+              <option value="">Selecione</option>
+              <option>Até 6 anos</option>
+              <option>7 a 12 anos</option>
+              <option>13 a 17 anos</option>
+              <option>18 anos ou mais</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="origem">Como conheceu o serviço</label>
+            <select id="origem" name="origem">
+              <option value="">Selecione</option>
+              <option>YouTube</option>
+              <option>Instagram</option>
+              <option>Indicação</option>
+              <option>Google</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-full">
+            <label for="situacao">Qual é a situação principal</label>
+            <textarea id="situacao" name="situacao" placeholder="Descreva brevemente o que está acontecendo. Não é necessário compartilhar dados clínicos neste momento."></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar triagem</button>
+        <p class="nota-form">Seus dados não serão compartilhados com terceiros. Este formulário é apenas o primeiro passo — não gera nenhum compromisso.</p>
+      </form>
+
+      <div id="msg-sucesso" role="alert">
+        ✓ Recebemos sua triagem. Cleonice retorna em até 48 horas úteis.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <p class="nome-rodape">CL Educação &amp; Desenvolvimento</p>
+  <p class="sub-rodape">por Cleonice Lussich</p>
+  <nav class="links-rodape" aria-label="Redes sociais">
+    <a href="https://youtube.com/@cleducacao" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://instagram.com/cl.educacao" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://substack.com/@cleoniceLussich" target="_blank" rel="noopener">Substack</a>
+  </nav>
+  <p class="copy">© 2026 CL Educação &amp; Desenvolvimento. Este site não oferece diagnóstico, laudo clínico ou representação jurídica.</p>
+</footer>
+<div class="barra-oliva"></div>
+
+<script>
+  document.getElementById('form-triagem').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('msg-sucesso').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
