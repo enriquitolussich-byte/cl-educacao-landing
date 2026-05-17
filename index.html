@@ -106,8 +106,8 @@
       margin-bottom: 1.5rem;
     }
     .hero-brand-logo {
-      width: 58px;
-      height: 58px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
       flex-shrink: 0;
     }
@@ -124,7 +124,7 @@
     }
     #hero h2 {
       color: #fff;
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
       line-height: 1.2;
       font-weight: 700;
       max-width: 18ch;
@@ -148,23 +148,16 @@
     }
     .btn-primary:hover { background: var(--teal-claro); }
     .hero-media { width: 100%; }
-    .hero-photo,
-    .hero-photo-placeholder {
+    .hero-photo {
       width: 100%;
-      max-width: 420px;
+      max-width: 380px;
       margin-left: auto;
       border-radius: 16px;
-    }
-    .hero-photo {
       object-fit: contain;
       display: block;
       height: auto;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    }
-    .hero-photo-placeholder {
-      min-height: 360px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
     }
 
     /* ── O QUE É ── */
@@ -469,8 +462,7 @@
       .hero-inner { grid-template-columns: 1fr; gap: 1.8rem; }
       #hero h2 { font-size: 1.8rem; max-width: 100%; }
       #hero p { font-size: 0.98rem; max-width: 100%; }
-      .hero-photo,
-      .hero-photo-placeholder { margin: 0; max-width: 100%; min-height: 280px; }
+      .hero-photo { margin: 0; max-width: 100%; }
       .dual-grid { grid-template-columns: 1fr; }
       .servicos-grid { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
@@ -509,14 +501,14 @@
             <span>por Cleonice Lussich</span>
           </div>
         </div>
-        <h2>Entre tantas opiniões, sua família precisa de direção</h2>
+        <h2>Entre tantas opiniões, sua família precisa de direção.</h2>
         <p>Orientação educacional e familiar para decisões escolares, alfabetização e formação dos filhos — no Brasil e fora dele.</p>
         <a class="btn-primary" href="https://wa.me/5511970672708?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20da%20CL%20Educa%C3%A7%C3%A3o%20%26%20Desenvolvimento%20e%20gostaria%20de%20receber%20orienta%C3%A7%C3%A3o%20para%20entender%20qual%20servi%C3%A7o%20%C3%A9%20mais%20adequado%20para%20minha%20fam%C3%ADlia." target="_blank" rel="noopener noreferrer">
           Quero orientação
         </a>
       </div>
-      <div class="hero-media" aria-hidden="true">
-        <div class="hero-photo-placeholder"></div>
+      <div class="hero-media">
+        <img class="hero-photo" src="/cl-educacao-landing/foto-cleonice-clara.png" alt="Cleonice Lussich, da CL Educação &amp; Desenvolvimento" />
       </div>
     </div>
   </section>
